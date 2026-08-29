@@ -416,9 +416,15 @@ func handle_interaction(id: String, fallback_text: String) -> void:
 			else: show_dialogue("The engraved TRUST door has no power.")
 		"l6_plan":
 			objectives.set_objective("Read all three verification notes and set the recorded panel order.")
-		"l6_note_a": flags["note_a"] = true
-		"l6_note_b": flags["note_b"] = true
-		"l6_note_c": flags["note_c"] = true
+		"l6_note_a":
+			flags["note_a"] = true
+			show_dialogue(fallback_text)
+		"l6_note_b":
+			flags["note_b"] = true
+			show_dialogue(fallback_text)
+		"l6_note_c":
+			flags["note_c"] = true
+			show_dialogue(fallback_text)
 		"l6_button_2", "l6_button_1", "l6_button_3":
 			if flags.get("note_a", false) and flags.get("note_b", false) and flags.get("note_c", false):
 				append_code(int(id.right(1)), [2, 1, 3], "l6_verified", "Verification accepted. The north TRUST exit unlocks.")
