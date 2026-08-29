@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://5iaijdipbde8"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_game"]
+[ext_resource type="Script" path="res://player.gd" id="2_player"]
+
+[sub_resource type="RectangleShape2D" id="PlayerCollisionShape"]
+size = Vector2(14, 14)
+
+[node name="TrustGame" type="Node2D" unique_id=171162060]
+script = ExtResource("1_game")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=840194065]
+script = ExtResource("2_player")
+
+[node name="PlaceholderVisual" type="Polygon2D" parent="Player" unique_id=261445607]
+color = Color(0.96, 0.72, 0.22, 1)
+polygon = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=2029514136]
+shape = SubResource("PlayerCollisionShape")
