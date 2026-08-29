@@ -38,10 +38,13 @@ func add_placeholder_visual(
 
 	if texture_path != "":
 		var sprite := Sprite2D.new()
-		sprite.texture = load(texture_path)
-		sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-		sprite.scale = Vector2(0.25, 0.25)
-		add_child(sprite)
+		var texture := load(texture_path) as Texture2D
+
+		if texture != null:
+			sprite.texture = texture
+			sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+			sprite.scale = get_sprite_scale(texture, object_size)
+			add_child(sprite)
 	else:
 		var visual := Polygon2D.new()
 		visual.polygon = PackedVector2Array([
@@ -65,11 +68,11 @@ func add_placeholder_visual(
 		-label_width / 2.0,
 		object_size.y / 2.0 + 3.0
 	)
+
 	label.size = Vector2(label_width, 18)
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.add_theme_font_size_override("font_size", 9)
 	label.add_theme_color_override("font_color", Color("d9e5e7"))
-
 	add_child(label)
 
 
@@ -83,5 +86,26 @@ func get_texture_path(title: String) -> String:
 			return "res://assets/sprites/record_case.png"
 		"EXIT":
 			return "res://assets/sprites/exit_door.png"
+		"ARCHIVE":
+			return "res://assets/sprites/archive_door.png"
+		"TRUST":
+			return "res://assets/sprites/trust_door.png"
+		"SERVICE":
+			return "res://assets/sprites/service_panel.png"
+		"SIGN":
+			return "res://assets/sprites/exit_sign.png"
 		_:
 			return ""
+
+
+func get_sprite_scale(texture: Texture2D, object_size: Vector2) -> Vector2:
+	var texture_size := texture.get_size()
+
+	if texture_size.x <= 0.0 or texture_size.y <= 0.0:
+		return Vector2.ONE
+
+	var scale_x := object_size.x / texture_size.x
+	var scale_y := object_size.y / texture_size.y
+	var uniform_scale := minf(scale_x, scale_y)
+
+	return Vector2(uniform_scale, uniform_scale)

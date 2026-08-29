@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g3ckok0s8eb1"
-path="res://.godot/imported/record_case_native.png-e692600231bea50b3191c5c9600ce06d.ctex"
+uid="uid://b6vocifi48si7"
+path="res://.godot/imported/trust_door.png-e5c01f208fb7624ecd99042a39043c32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/record_case_native.png"
-dest_files=["res://.godot/imported/record_case_native.png-e692600231bea50b3191c5c9600ce06d.ctex"]
+source_file="res://assets/sprites/trust_door.png"
+dest_files=["res://.godot/imported/trust_door.png-e5c01f208fb7624ecd99042a39043c32.ctex"]
 
 [params]
 
