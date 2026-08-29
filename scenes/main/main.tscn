@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c0kv83v0kdr8w" path="res://scripts/core/game.gd" id="1_game"]
 [ext_resource type="Script" uid="uid://nrqyre60p5gr" path="res://scripts/player/player.gd" id="2_player"]
-[ext_resource type="Texture2D" uid="uid://doffr3r56ohbk" path="res://assets/sprites/player.png" id="3_k2fmo"]
+[ext_resource type="Texture2D" uid="uid://hfqf3xsqimkt" path="res://assets/sprites/player.png" id="3_k2fmo"]
 
 [sub_resource type="RectangleShape2D" id="PlayerCollisionShape"]
 size = Vector2(14, 14)
