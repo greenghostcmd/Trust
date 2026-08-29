@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://ccwk8cjha5j7x"]
 
-[ext_resource type="Script" path="res://scripts/core/game.gd" id="1_game"]
-[ext_resource type="Script" path="res://scripts/player/player.gd" id="2_player"]
+[ext_resource type="Script" uid="uid://c0kv83v0kdr8w" path="res://scripts/core/game.gd" id="1_game"]
+[ext_resource type="Script" uid="uid://nrqyre60p5gr" path="res://scripts/player/player.gd" id="2_player"]
+[ext_resource type="Texture2D" uid="uid://doffr3r56ohbk" path="res://assets/sprites/player.png" id="3_k2fmo"]
 
 [sub_resource type="RectangleShape2D" id="PlayerCollisionShape"]
 size = Vector2(14, 14)
 
-[node name="TrustGame" type="Node2D"]
+[node name="TrustGame" type="Node2D" unique_id=1081897751]
 script = ExtResource("1_game")
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1338893480]
 script = ExtResource("2_player")
 
-[node name="PlaceholderVisual" type="Polygon2D" parent="Player"]
-polygon = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
-color = Color(0.96, 0.72, 0.22, 1)
+[node name="PlayerSprite" type="Sprite2D" parent="Player" unique_id=1203271711]
+texture = ExtResource("3_k2fmo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=2091585035]
 shape = SubResource("PlayerCollisionShape")
