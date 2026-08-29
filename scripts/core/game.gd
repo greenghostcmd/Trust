@@ -388,6 +388,7 @@ func handle_interaction(id: String, fallback_text: String) -> void:
 		"l4_inventory":
 			flags["inventory"] = true
 			objectives.set_objective("Use the RECORD door: the record case is missing." if flags.get("rule", false) else "Enter the archive and learn its return rule.")
+			show_dialogue(fallback_text)
 		"l4_archive": change_room(1, "ARCHIVE")
 		"l4_rule":
 			flags["rule"] = true
