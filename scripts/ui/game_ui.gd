@@ -25,6 +25,7 @@ var controls_screen: Control
 var pause_screen: Control
 var play_button: Button
 var resume_button: Button
+var music_control: MusicControl
 var dialogue_request := 0
 var transition_request := 0
 
@@ -35,6 +36,9 @@ func _ready() -> void:
 	build_title_screen()
 	build_pause_screen()
 
+	music_control = MusicControl.new()
+	add_child(music_control)
+
 func show_title() -> void:
 	title_screen.visible = true
 	controls_screen.visible = false
@@ -42,6 +46,11 @@ func show_title() -> void:
 	set_hud_visible(false)
 	hide_dialogue()
 	hide_transition()
+
+	if music_control != null:
+		music_control.visible = false
+		music_control.stop_music()
+
 	play_button.grab_focus()
 
 func show_game_hud() -> void:
@@ -49,6 +58,10 @@ func show_game_hud() -> void:
 	controls_screen.visible = false
 	set_hud_visible(true)
 	utility_label.text = "R — RESTART LEVEL   ESC — PAUSE"
+
+	if music_control != null:
+		music_control.visible = true
+		music_control.start_music()
 
 func show_pause() -> void:
 	pause_screen.visible = true
