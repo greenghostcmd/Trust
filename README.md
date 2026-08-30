@@ -43,8 +43,8 @@ It's a small collaborative project, with the game, levels, code, and art being w
 **Green Gh0st**
 Coded the v1 of the game, wrote the puzzles and the story. 
 
-**Ruster**
-Made very cool art, wrote fire music and refined the v1. 
+**Tylerr**
+made very cool art, wrote fire music and refined the v1. Tylerr is known as Ruster too. 
 
 ## Note
 
